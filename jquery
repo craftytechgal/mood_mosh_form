@@ -2,12 +2,16 @@ jQuery.validator.setDefaults({
   debug: true,
   success: "valid"
 });
-
 $( "#myform" ).validate({
   rules: {
-    password: "required",
+    password: {
+    	required: true,
+    	minlength: 8,
+    },
     password_again: {
-      equalTo: "#password"
-    }
+      equalTo: "#password",
+      required: true,
+      minlength: 8,
+    },
   }
 });
