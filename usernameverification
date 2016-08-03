@@ -1,0 +1,58 @@
+<html>
+<head>
+ <script src="https://code.jquery.com/jquery-3.0.0.js">
+</script></head>
+<body>
+<form class="form">
+      <div class="form-group username-group">
+        <input class="username form-control">
+        <div class="username-help-text help-block"></div>
+      </div>
+
+</form>
+</body>
+</html>
+
+
+  <script type="text/javascript">
+      var $usernameInput = $('.username')
+      var $usernameInputGroup = $usernameInput.parent()
+      var $usernameError = $('.username-help-text')
+      var blacklist = [
+        'winnie',
+        'piglet',
+        'tigre',
+        'rabbit'
+       ]
+
+      var usernameUsed = function (name) {
+        return blacklist.indexOf(name) > -1
+      }
+
+      var clearError = function () {
+        $usernameInputGroup.removeClass('has-error')
+        $usernameError.text('')
+      }
+
+      var setError = function () {
+        $usernameInputGroup.addClass('has-error')
+        $usernameError.text('the username: ' + $usernameInput.val() + ' is already taken.')
+      }
+
+      var updateUsername = function (e) {
+        // get my username
+        var username = $usernameInput.val()
+        // is my username unique
+        var usernameUnique = !usernameUsed(username)
+        if (usernameUnique) {
+        // if my username is unique, get rid all the errors
+          clearError()
+        } else {
+        // if isn't show me an error
+          setError()
+        }
+      }
+      $usernameInput.on('change', updateUsername)
+  </script>
+</body>
+</html>
