@@ -34,7 +34,7 @@
     <!-- PASSWORD SWITCH CODE-->
     <input type="checkbox" onchange= "document.getElementById('password').type= this.checked ? 'text' : 'password' ">
         Show password<br/>
-  <!-- PASSWORD INPUT 02 -->
+<!-- PASSWORD INPUT 02 -->
     <label for="password_again">Again</label>
     <input type="password" class="left" id="password_again" name="password_again" />
 
@@ -123,7 +123,7 @@
 
 ;
 
-
+//PASSWORD LENGTH
 jQuery.validator.setDefaults({
   debug: true,
   success: "valid"
