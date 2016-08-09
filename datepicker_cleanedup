@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Birthday Picker Demos</title>
+<!--<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">-->
+
+<!--jquery library-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--link for birthday picker plugin-->
+<script src="js/jquery-birthday-picker.min.js"></script>
+</head>
+
+<body>
+		<div id="jquery-script-menu">
+			<div class="jquery-script-center">
+				<div class="jquery-script-clear"></div>
+			</div>
+		</div>
+
+<!--container that holds the date picker-->
+		<div class="container" style="margin-top:150px;"></div>
+<!--using the id default-settings to call the date picker box we want-->
+			<div id="default-settings"></div>
+<script>
+	$("#default-settings").birthdayPicker();	
+	$("#default-birthday").birthdayPicker({"defaultDate":"01-03-1980"});
+	$("#max-year-birthday").birthdayPicker({
+		"defaultDate": "01-03-1980",
+		"maxYear": "2020",
+		"maxAge": 65
+	});
+</script>
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-36251023-1']);
+	_gaq.push(['_setDomainName', 'jqueryscript.net']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+  	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+</body>
+</html>
